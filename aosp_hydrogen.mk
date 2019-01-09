@@ -15,21 +15,41 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/hydrogen/full_hydrogen.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+
+
+$(call inherit-product, device/xiaomi/helium/full_helium.mk)
+
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080
+ 
 # Set those variables here to overwrite the inherited values.
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := hydrogen
-PRODUCT_NAME := lineage_hydrogen
+PRODUCT_NAME := aosp_hydrogen
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Mi Max
+PRODUCT_MODEL := Mi Max 
 TARGET_VENDOR := Xiaomi
+CUSTOM_BUILD_TYPE := OFFICIAL
+PRODUCT_GMS_CLIENTID_BASE = android-xiaomi
+TARGET_MINIMAL_APPS := true
+TARGET_GAPPS_ARCH := arm64
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+
+
+
+
+
+
+
+
+
+
 
 # Use the latest approved GMS identifiers unless running a signed build
 PRODUCT_BUILD_PROP_OVERRIDES += \
